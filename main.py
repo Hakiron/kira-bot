@@ -1,7 +1,15 @@
+import subprocess
+import sys
 import random
 import os  # <-- ТЕПЕРЬ МОДУЛЬ НА МЕСТЕ!
 import disnake
 from disnake.ext import commands, tasks
+
+try:
+    import disnake
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "disnake"])
+    import disnake
 
 # 1. НАСТРОЙКА ПРАВ БОТА
 intents = disnake.Intents.default()
